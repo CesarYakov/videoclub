@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home',array('nombre'=>'César Escobedo'));
+    return view('home');
+    //return 'Pantalla principal';
 });
 
 Route::get('/login', function(){
