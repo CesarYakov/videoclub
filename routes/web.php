@@ -22,7 +22,12 @@ Route::get('/login', function(){
 });
 
 Route::get('/logout', function(){
-    return redirect('/');
+    // cerrar sesión
+    if (Auth::check()) {
+        Auth::logout();
+        }
+        return redirect('/');
+ 
 });
 
 Route::get('/catalog', function(){
@@ -37,10 +42,9 @@ Route::get('/catalog/create', function(){
     return view ('catalog.create');
 });
 
-Route::get('/catalog/edit/{id}', function($id){
-    return view ('catalog.edit',['id'=>$id]);
+Route::get('/catalog/edit/{id}', function ($id) {
+ return view('catalog.edit', ['id' => $id]);
 });
-
 
 
 
